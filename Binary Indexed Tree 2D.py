@@ -26,33 +26,33 @@ class BIT2D:
         self._update(row, col, diff)
         
     def _update(self, row, col, diff):
-            '''
-            BIT updates based on diff
-            '''
-            row += 1; col += 1
-            while row <= self.n:
-                col_ = col
-                while col_ <= self.m:
-                    self.trees[row][col_] += diff
-                    col_ += (col_ & (-col_))
-                row += (row & (-row))
-        
-    def query(self, y, x): 
-            '''
-            get sum over region (0, 0) to (y, x)
-            '''
-            y += 1; x += 1
-            # sum over all cols in all rows
-            s = 0
-            while y > 0:
-                x_ = x
-                while x_ > 0:
-                    s += self.trees[y][x_]
-                    x_ -= (x_ & (-x_))
-                y -= (y & (-y))
+        '''
+        BIT updates based on diff
+        '''
+        row += 1; col += 1
+        while row <= self.n:
+            col_ = col
+            while col_ <= self.m:
+                self.trees[row][col_] += diff
+                col_ += (col_ & (-col_))
+            row += (row & (-row))
 
-            return s 
-        
+    def query(self, y, x): 
+        '''
+        get sum over region (0, 0) to (y, x)
+        '''
+        y += 1; x += 1
+        # sum over all cols in all rows
+        s = 0
+        while y > 0:
+            x_ = x
+            while x_ > 0:
+                s += self.trees[y][x_]
+                x_ -= (x_ & (-x_))
+            y -= (y & (-y))
+
+        return s 
+
 
     def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
         '''
