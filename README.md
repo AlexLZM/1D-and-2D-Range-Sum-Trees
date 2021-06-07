@@ -13,5 +13,6 @@ The py files are my implementation of 1d and 2d Segment tree/BIT data structre.
 Segment Trees are for ranges with arbitrary start index and BITs are for ranges start from index 0.
 
 
-**In the implementation codes, I used bit manipulation for efficiency.**
+### Note
+In the implementation codes, I used bit manipulation for efficiency.**
 
