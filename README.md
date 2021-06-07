@@ -14,5 +14,5 @@ Segment Trees are for ranges with arbitrary start index and BITs are for ranges 
 
 
 ### Note
-In the implementation codes, I used bit manipulation for efficiency.**
+In the implementation codes, I used bit manipulation for efficiency.
 
