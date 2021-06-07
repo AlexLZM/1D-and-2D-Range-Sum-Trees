@@ -16,7 +16,6 @@ class BIT:
         '''
         i += 1 # convert to 1-index
         while i <= self.n:
-
             self.tree[i] += diff
             i += (i & (-i))
 
